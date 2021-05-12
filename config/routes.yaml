@@ -1,0 +1,26 @@
+vehiculos:
+    path: /
+    controller: App\Controller\VehiculosController::index
+
+new_vehiculo:
+    path: /new-vehiculo
+    controller: App\Controller\VehiculosController::createVehiculo
+
+edit_vehiculo:
+    path: /edit-vehiculo/{codigo}
+    controller: App\Controller\VehiculosController::editVehiculo
+
+delete_vehiculo:
+    path: /delete-vehiculo/{codigo}
+    controller: App\Controller\VehiculosController::deleteVehiculo
+
+register:
+    path: /registro
+    controller: App\Controller\UsersController::register
+
+login:
+    path: /login
+    controller: App\Controller\UsersController::login
+
+logout:
+    path: /logout

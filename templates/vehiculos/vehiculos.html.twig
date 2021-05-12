@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Mis Vehiculos {% endblock %}
+
+{% block body %}
+
+    <div class="example-wrapper">
+        <h2>Mis Vehiculos. </h2>
+        <table>
+        <tr>
+            <th > Código </th>
+            <th > Marca - Modelo </th>
+            <th > Precio </th>
+            <th > Acciones </th>
+        </tr>
+        <tr>
+        {% for vehiculo in vehiculos %}
+            <tr>
+                <td> {{vehiculo.codigo}} </td>
+                <td> {{vehiculo.descripcion}} </td>
+                <td> {{vehiculo.precio}} </td>
+                <td class="buttons"> 
+                    <a href="{{path('edit_vehiculo', {'codigo': vehiculo.codigo})}}" class="edit"> Editar </a> 
+                    <a href="{{path('delete_vehiculo', {'codigo': vehiculo.codigo})}}" class="delete"> Eliminar </a> 
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+{% endblock %}
